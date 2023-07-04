@@ -6,8 +6,8 @@ import { Product } from "../components/Product";
 import { Table } from "../components/Table";
 
 export default function App() {
-  const [pr1Price, setPr1Price] = useState(18);
-  const [pr2Price, setPr2Price] = useState(17);
+  const [pr1Price, setPr1Price] = useState(20);
+  const [pr2Price, setPr2Price] = useState(20);
   const [pr3Price, setPr3Price] = useState(20);
   const [pr4Price, setPr4Price] = useState(0);
   const [pr5Price, setPr5Price] = useState(0);
