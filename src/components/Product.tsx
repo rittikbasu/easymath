@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ProductProps {
-  defaultPrice: number;
   price: number;
   name: string;
   color: string;
@@ -14,34 +13,30 @@ interface ProductProps {
 }
 
 export function Product({
-  defaultPrice,
   price,
   name,
   color,
   quantity,
   setQuantity,
-  step = 0,
+  step = 1,
   setPrice,
   hidePrice = false,
   hideQuantity = false,
 }: ProductProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  //   const [price, setPrice] = useState(defaultPrice);
-  console.log("price", price, name, color);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
   const handleIncrement = () => {
-    setQuantity(quantity + step);
-    setPrice(defaultPrice * quantity);
+    setQuantity(
+      ((prevQuantity: number) => prevQuantity + step) as unknown as number
+    );
   };
-
   const handleDecrement = () => {
     if (quantity > 0) {
       setQuantity(quantity - step);
-      setPrice(defaultPrice * quantity);
     }
   };
 
@@ -56,7 +51,7 @@ export function Product({
           <div className={`h-full w-full ${color} transform rotate-0`}></div>
           <div className="h-full w-full bg-white transform -rotate-0"></div>
         </div>
-        <p className="text-center text-xs mt-2 w-12">
+        <p className="text-center text-xs mt-2 w-12 rounded-lg">
           <span className="inline-block">{name}</span>
         </p>
       </button>
@@ -69,11 +64,11 @@ export function Product({
           onClick={toggleModal}
         >
           <div
-            className="relative w-full max-w-md p-4 overflow-x-hidden overflow-y-auto bg-white rounded-lg shadow dark:bg-gray-700"
+            className="relative w-full max-w-md p-4 overflow-x-hidden overflow-y-auto bg-white rounded-lg shadow dark:bg-gray-900"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="px-6 py-6 lg:px-8">
-              <form className="space-y-6" action="#">
+              <div className="space-y-6">
                 {/* Quantity */}
                 {!hideQuantity && (
                   <div className="flex items-start justify-between mt-2">
@@ -118,13 +113,13 @@ export function Product({
                       type="number"
                       id="price"
                       name="price"
-                      className="w-[90px] text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 mt-1 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      className="w-[90px] text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 mt-1 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-white"
                       value={price}
                       onChange={(e) => setPrice(Number(e.target.value))}
                     />
                   </div>
                 )}
-              </form>
+              </div>
             </div>
           </div>
         </div>
