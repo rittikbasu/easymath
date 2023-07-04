@@ -70,7 +70,7 @@ export default function App() {
         ></Product>
       </div>
 
-      <div className="md:mt-32 mt-12 border border-zinc-700 pt-2 rounded-2xl mx-2 overflow-hidden">
+      <div className="md:mt-32 mt-12 border border-zinc-700 pt-2 rounded-2xl mx-2 overflow-hidden min-h-[314px]">
         <Table
           pr1Price={pr1Price}
           pr2Price={pr2Price}

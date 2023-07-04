@@ -109,7 +109,7 @@ export function Table({
           </th>
           <td className="px-5 py-4 text-center">-</td>
           <td className="px-5 py-4 text-center">₹{pr4Quantity}</td>
-          <td className="pr-1 py-4 flex justify-center item-center">
+          <td className="px-1 py-4 flex justify-center item-center">
             <ResetBtn setPrice={setPr4Price} setQuantity={setPr4Quantity} />
           </td>
         </tr>
