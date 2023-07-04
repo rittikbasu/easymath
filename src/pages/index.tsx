@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from "next/head";
 import Link from "next/link";
 
 import { Product } from "../components/Product";
@@ -18,6 +19,10 @@ export default function App() {
   const [pr5Quantity, setPr5Quantity] = useState(0);
   return (
     <div className="max-w-md md:mx-auto flex flex-col h-screen antialiased overflow-auto">
+      <Head>
+        <title>Easy Math ✨</title>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <h1 className="text-3xl text-center mt-8 font-mono">Easy Math ✨</h1>
       <div className="flex justify-center gap-x-6 md:mt-14 mt-8 border border-zinc-700 py-2 rounded-2xl mx-2">
         <Product
