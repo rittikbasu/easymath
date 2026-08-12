@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://easymath.rittik.fyi/sitemap.xml

@@ -21,6 +21,16 @@ export default function App() {
     <div className="max-w-md md:mx-auto flex flex-col h-screen antialiased overflow-auto">
       <Head>
         <title>Easy Math ✨</title>
+        <meta name="description" content="A simple shared-expense calculator." />
+        <link rel="canonical" href="https://easymath.rittik.fyi/" />
+        <meta property="og:title" content="Easy Math" />
+        <meta property="og:description" content="A simple shared-expense calculator." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://easymath.rittik.fyi/" />
+        <meta property="og:site_name" content="Easy Math" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Easy Math" />
+        <meta name="twitter:description" content="A simple shared-expense calculator." />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <h1 className="text-3xl text-center mt-8 font-mono">Easy Math ✨</h1>
@@ -114,7 +124,7 @@ export default function App() {
       {/* Footer */}
       <footer className="mt-auto px-5 py-4 text-center bg-black">
         <p className="font-mono">
-          <Link href="https://rittik.io" className="hover:text-indigo-500">
+          <Link href="https://rittik.fyi" className="hover:text-indigo-500">
             Made with ❤️ by Rittik
           </Link>
         </p>
